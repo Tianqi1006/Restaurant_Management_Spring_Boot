@@ -100,7 +100,7 @@ curl -iX POST localhost:8080/restaurants -H 'Content-type:application/json' -d '
 
 ​		![PostRequest](readme_Pic/PostRequest.png)
 
-![PostRequest2](/Users/tianqili/Dropbox/Jobs/Geotab/Technical Assessment/readme_Pic/PostRequest2.png)
+![PostRequest2](readme_Pic/PostRequest2.png)
 
 * **PUT**
 
@@ -117,50 +117,50 @@ curl -iX PUT localhost:8080/restaurants/2 -H 'Content-type:application/json' -d
 	"restaurant_province":"ON"}'
 ```
 
-![PutRequest](/Users/tianqili/Dropbox/Jobs/Geotab/Technical Assessment/readme_Pic/PutRequest.png)
+![PutRequest](readme_Pic/PutRequest.png)
 
 * **GET**
   1. Search Restaurant
 
 Search restaurant based on restaurant_id: `http://localhost:8080/restaurants/2`
 
-![Get4_1](/Users/tianqili/Dropbox/Jobs/Geotab/Technical Assessment/readme_Pic/Get4_1.png)
+![Get4_1](readme_Pic/Get4_1.png)
 
 
 
 Search restaurant based on restaurant_name: `http://localhost:8080/restaurants?restaurant_name=chinaBowl`
 
-![Get4_6](/Users/tianqili/Dropbox/Jobs/Geotab/Technical Assessment/readme_Pic/Get4_6.png)
+![Get4_6](readme_Pic/Get4_6.png)
 
 
 
 Search restaurant based on restaurant_city: `http://localhost:8080/restaurants?restaurant_city=markham`
 
-![Get4_2](/Users/tianqili/Dropbox/Jobs/Geotab/Technical Assessment/readme_Pic/Get4_2.png)
+![Get4_2](readme_Pic/Get4_2.png)
 
 
 
 Search restaurant based on restaurant_province: `http://localhost:8080/restaurants?restaurant_province=ON`
 
-![Get4_3](/Users/tianqili/Dropbox/Jobs/Geotab/Technical Assessment/readme_Pic/Get4_3.png)
+![Get4_3](readme_Pic/Get4_3.png)
 
 
 
 Search restaurant based on restaurant_rating: `http://localhost:8080/restaurants?restaurant_rating=8`
 
-![Get4_4](/Users/tianqili/Dropbox/Jobs/Geotab/Technical Assessment/readme_Pic/Get4_4.png)
+![Get4_4](readme_Pic/Get4_4.png)
 
 
 
 Search restaurant based on restaurant_cuisine: `http://localhost:8080/restaurants?restaurant_cuisines=indian`
 
-![Get4_5](/Users/tianqili/Dropbox/Jobs/Geotab/Technical Assessment/readme_Pic/Get4_5.png)
+![Get4_5](readme_Pic/Get4_5.png)
 
 
 
 Search restaurant based on restaurant_cuisine and rating: `http://localhost:8080/restaurants?restaurant_cuisines=italian&restaurant_rating=9`
 
-![Get4_7](/Users/tianqili/Dropbox/Jobs/Geotab/Technical Assessment/readme_Pic/Get4_7.png)
+![Get4_7](readme_Pic/Get4_7.png)
 
 
 
@@ -168,31 +168,31 @@ Search restaurant based on restaurant_cuisine and rating: `http://localhost:8080
 
 Search chef based on restaurant_id: `http://localhost:8080/chefs?restaurant_id=2`
 
-![Get5_1](/Users/tianqili/Dropbox/Jobs/Geotab/Technical Assessment/readme_Pic/Get5_1.png)
+![Get5_1](readme_Pic/Get5_1.png)
 
 
 
 Search chef based on restaurant_id & cuisine: `http://localhost:8080/chefs?restaurant_id=2&cuisine=indian`
 
-![Get5_2](/Users/tianqili/Dropbox/Jobs/Geotab/Technical Assessment/readme_Pic/Get5_2.png)
+![Get5_2](readme_Pic/Get5_2.png)
 
 
 
 Search chef based on restaurant_id & name: `http://localhost:8080/chefs?restaurant_id=2&name=abcd`
 
-![Get5_2](/Users/tianqili/Dropbox/Jobs/Geotab/Technical Assessment/readme_Pic/Get5_2.png)
+![Get5_2](readme_Pic/Get5_2.png)
 
 
 
 Search chef based on (chef's) name: `http://localhost:8080/chefs?name=abcd`
 
-![Get5_4](/Users/tianqili/Dropbox/Jobs/Geotab/Technical Assessment/readme_Pic/Get5_4.png)
+![Get5_4](readme_Pic/Get5_4.png)
 
 
 
 Search chef based on (chef's) cuisine: `http://localhost:8080/chefs?cuisine=indian`
 
-![Get5_5](/Users/tianqili/Dropbox/Jobs/Geotab/Technical Assessment/readme_Pic/Get5_5.png)
+![Get5_5](readme_Pic/Get5_5.png)
 
 
 
@@ -202,7 +202,7 @@ Search chef based on (chef's) cuisine: `http://localhost:8080/chefs?cuisine=indi
   curl -iX DELETE localhost:8080/restaurants/2
   ```
 
-  ![Delete](/Users/tianqili/Dropbox/Jobs/Geotab/Technical Assessment/readme_Pic/Delete.png)
+  ![Delete](readme_Pic/Delete.png)
 
 
 
