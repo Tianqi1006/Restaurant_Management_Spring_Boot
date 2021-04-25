@@ -98,7 +98,7 @@ curl -iX POST localhost:8080/restaurants -H 'Content-type:application/json' -d '
 
 ```
 
-​		![PostRequest](/Users/tianqili/Dropbox/Jobs/Geotab/Technical Assessment/readme_Pic/PostRequest.png)
+​		![PostRequest](readme_Pic/PostRequest.png)
 
 ![PostRequest2](/Users/tianqili/Dropbox/Jobs/Geotab/Technical Assessment/readme_Pic/PostRequest2.png)
 
