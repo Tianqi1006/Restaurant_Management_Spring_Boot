@@ -12,14 +12,14 @@ public class RestaurantSpecification implements Specification<Restaurant> {
     private String columnName;
     private String searchValue;
 
-    public RestaurantSpecification(String columnName, String searchValue){
+    public RestaurantSpecification(String columnName, String searchValue) {
         this.columnName = columnName;
         this.searchValue = searchValue;
     }
 
     @Override
-    public Predicate toPredicate(Root<Restaurant> root, CriteriaQuery<?> query, CriteriaBuilder builder){
-        if (columnName.equalsIgnoreCase("restaurant_cuisines")){
+    public Predicate toPredicate(Root<Restaurant> root, CriteriaQuery<?> query, CriteriaBuilder builder) {
+        if (columnName.equalsIgnoreCase("restaurant_cuisines")) {
             Expression<Collection<String>> column = root.get("restaurant_cuisines");
             return builder.isMember(this.searchValue, column);
         }

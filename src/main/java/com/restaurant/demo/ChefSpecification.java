@@ -17,10 +17,10 @@ public class ChefSpecification implements Specification<Chef> {
 
     @Override
     public Predicate toPredicate(Root<Chef> root, CriteriaQuery<?> criteriaQuery, CriteriaBuilder criteriaBuilder) {
-        if (columnName.equalsIgnoreCase("restaurant_id")){
+        if (columnName.equalsIgnoreCase("restaurant_id")) {
             return criteriaBuilder.equal(root.get("restaurant").get("restaurant_id"), searchValue);
         }
-        else if (columnName.equalsIgnoreCase("cuisine")){
+        else if (columnName.equalsIgnoreCase("cuisine")) {
             Expression<Collection<String>> column = root.get("chef_cuisines");
             return criteriaBuilder.isMember(this.searchValue, column);
         }

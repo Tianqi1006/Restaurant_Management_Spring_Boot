@@ -47,7 +47,7 @@ class Chef {
     }
 
     @JsonIgnore
-    public Restaurant getRestaurant(){
+    public Restaurant getRestaurant() {
         return restaurant;
     }
 

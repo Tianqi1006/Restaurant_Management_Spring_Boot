@@ -14,14 +14,14 @@ public class RestaurantService {
     private final ChefRepository chefRepository;
 
     @Autowired
-    public RestaurantService(RestaurantRepository restaurantRepository, ChefRepository chefRepository){
+    public RestaurantService(RestaurantRepository restaurantRepository, ChefRepository chefRepository) {
         this.restaurantRepository = restaurantRepository;
         this.chefRepository = chefRepository;
     }
 
-    public Restaurant save (Restaurant restaurant){
+    public Restaurant save (Restaurant restaurant) {
         List<Chef> chefs = new ArrayList<>();
-        for (Chef chef : restaurant.getRestaurant_chefs()){
+        for (Chef chef : restaurant.getRestaurant_chefs()) {
             chefs.add(chefRepository.save(chef));
         }
         Restaurant restaurantTemp = new Restaurant();

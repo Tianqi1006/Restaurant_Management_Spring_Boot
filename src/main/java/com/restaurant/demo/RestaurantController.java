@@ -64,7 +64,7 @@ public class RestaurantController {
 
     @GetMapping("/chefs")
     @ResponseBody
-    List<Chef> getChefs(@RequestParam Map<String, String> paramMap){
+    List<Chef> getChefs(@RequestParam Map<String, String> paramMap) {
         List<ChefSpecification> specs = new ArrayList<>();
         for (String key : paramMap.keySet()){
             specs.add(new ChefSpecification(key, paramMap.get(key)));
