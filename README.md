@@ -1,16 +1,20 @@
 # Restaurant Suggestion and Management Application
 
+
+
 ## Introduction and Features
 
-The goal of this application was to develop a back-end management application using Spring Boot and Java to realize the management of a restaurant chain along with their respectively served cuisines. Each restaurant under the chain is independent and has its unique name, a list of cuisines & chefs, a rating and its geological information. For each chef in each restaurant, his/her corresponding name, salary and specialized cuisine(s) are also appropriately stored and managed. 
+The goal of this application is to develop a back-end management application using **Spring Boot** and **Java** to realize the management of a restaurant chain along with their respectively served cuisines. Each restaurant under the chain is independent of each other and has its own name, a list of cuisines & chefs, a rating and its geological information. For each chef in each restaurant, his/her corresponding name, salary and specialized cuisine(s) are also appropriately stored and managed. 
 
 The implemented features include the following:
 
 * **Add new restaurants**: realized through a POST Mapping onto "/restaurants" which contains all the details for restaurants as well as an automatically generated restaurant_id (used as the primary key in the database).
-* **Update details in existing restaurants**: realized through a PUT Mapping to "/restaurants/restaurant_id=*some_id*" to update all the details for a given restaurant (as specified by the corresponding restaurant_id).
-* **Delete existing restaurants**: realized through a DELETE Mapping on "/restaurants/restaurant_id=*some_id*" to delete the given restaurant which corresponds to the restaurant_id provided in the request.
-* **Search restaurant based on restaurant attributes**: realized through a GET Mapping on '/restaurants/restaurant_id=*some_id*' or '/restaurants?*some_restaurant_attribute*' which will return the restaurant(s) that satisfy the searching criteria (which could contains either single or multiple parameters).
-* **Search chefs based on restaurant_id or cuisines**: realized through a GET Mapping on '/chefs?restaurant_id=*some_id*' and/or another search criteria based on a restaurant attribute. The search based on only chef attributes (such as Chef's name / cuisines / salary) is also implemented.
+* **Update details in existing restaurants**: realized through a PUT Mapping onto "/restaurants/restaurant_id=*some_id*" to update all the details for a given restaurant (as specified by the corresponding restaurant_id).
+* **Delete existing restaurants**: realized through a DELETE Mapping onto "/restaurants/restaurant_id=*some_id*" to delete the given restaurant which corresponds to the restaurant_id provided in the request.
+* **Search restaurant based on restaurant attributes**: realized through a GET Mapping onto '/restaurants/restaurant_id=*some_id*' or '/restaurants?*some_restaurant_attribute*' which will return the restaurant(s) that satisfy the searching criteria (which could contain either single or multiple parameters).
+* **Search chefs based on restaurant_id or cuisines**: realized through a GET Mapping onto '/chefs?restaurant_id=*some_id*' and/or another search criteria based on a restaurant attribute. The search based on only chef attributes (such as Chef's name / cuisines / salary) is also implemented.
+
+
 
 ## Implementation Stacks
 
@@ -29,6 +33,7 @@ The implemented features include the following:
 - ​	H2 Database
 
 - ​	Maven
+
 
 
 ## Architecture
@@ -63,13 +68,44 @@ The implemented features include the following:
 
 
 
+## UML Diagram
+
+This is the IntelliJ generated UML diagram to show the class dependencies and structures:
+
+![Restaurant_UML](/Users/tianqili/Dropbox/Jobs/Geotab/Technical Assessment/readme_Pic/Restaurant_UML.png)
+
+
+
+
+
 ## Test
 
 ### Running
 
-`$ mvn clean spring-boot:run`
+To run this application, type in the terminal:
+
+ `$ mvn clean spring-boot:run`
+
+Which should lead to the success build as seen below:
+
+![ApplicationRun](readme_Pic/ApplicationRun.png)
+
+
 
 ### Testing
+
+A summary of the POST, PUT, GET and DELETE operations have been tested and verified below. Please also note that, there is a preloading of a default restaurant with these parameters (as listed below) when the database is initialized:
+
+```java
+@Bean
+CommandLineRunner initDatabase(RestaurantRepository repository) {
+  return args -> {
+    log.info("Preloading " + repository.save(new Restaurant("KFC", new ArrayList<String>(), new ArrayList<Chef>(), 9, "cambridge", "ON")));
+  };
+}
+```
+
+
 
 - **POST**
 
@@ -102,6 +138,8 @@ curl -iX POST localhost:8080/restaurants -H 'Content-type:application/json' -d '
 
 ![PostRequest2](readme_Pic/PostRequest2.png)
 
+
+
 * **PUT**
 
 ```sh
@@ -119,8 +157,10 @@ curl -iX PUT localhost:8080/restaurants/2 -H 'Content-type:application/json' -d
 
 ![PutRequest](readme_Pic/PutRequest.png)
 
+
+
 * **GET**
-  1. Search Restaurant
+  1. **Search Restaurant**
 
 Search restaurant based on restaurant_id: `http://localhost:8080/restaurants/2`
 
@@ -164,7 +204,7 @@ Search restaurant based on restaurant_cuisine and rating: `http://localhost:8080
 
 
 
-  		2. Search Chef
+2. **Search Chef** 
 
 Search chef based on restaurant_id: `http://localhost:8080/chefs?restaurant_id=2`
 
@@ -209,5 +249,4 @@ Search chef based on (chef's) cuisine: `http://localhost:8080/chefs?cuisine=indi
 ### Future work
 
 * Restrict input values for restaurant parameters by using ENUM for province / city / rating (such as 1-10)
-* Add a UML diagram to clearly show the class dependencies and structures
 * Implement unit tests using JUnit 
