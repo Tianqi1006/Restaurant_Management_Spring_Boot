@@ -72,7 +72,7 @@ The implemented features include the following:
 
 This is the IntelliJ generated UML diagram to show the class dependencies and structures:
 
-![Restaurant_UML](/Users/tianqili/Dropbox/Jobs/Geotab/Technical Assessment/readme_Pic/Restaurant_UML.png)
+![Restaurant_UML](readme_Pic/Restaurant_UML.png)
 
 
 
